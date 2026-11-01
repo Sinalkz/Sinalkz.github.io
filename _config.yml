@@ -1,0 +1,4 @@
+# GitHub Pages runs Jekyll on this repo. The site is plain HTML for now;
+# this file only keeps repo-only files off the published site.
+exclude:
+  - README.md

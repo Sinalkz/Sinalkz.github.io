@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ali Lakzaei</title>
+  <meta name="description" content="Ali Lakzaei, privacy-preserving machine learning researcher. M.Sc. in Computer Engineering, Tarbiat Modares University. Contact details and CV.">
+  <meta name="author" content="Ali Lakzaei">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A1340" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Ali Lakzaei">
+  <meta property="og:description" content="Privacy-preserving ML researcher. M.Sc. Computer Engineering, Tarbiat Modares University.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Apply a saved light/dark choice before the page paints (avoids a flash).
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <button class="theme-toggle" type="button" aria-label="Switch colour theme">
+    <svg class="icon-moon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#moon"/></svg>
+    <svg class="icon-sun" aria-hidden="true" focusable="false"><use href="assets/icons.svg#sun"/></svg>
+  </button>
+
+  <main class="card">
+    <header class="intro">
+      <h1>Ali Lakzaei</h1>
+      <p class="role">Privacy-preserving ML researcher</p>
+      <p class="affiliation"><span>M.Sc. Computer Engineering</span><span class="sep" aria-hidden="true"> · </span><span>Tarbiat Modares University</span></p>
+    </header>
+
+    <ul class="contacts" aria-label="Contact">
+      <li>
+        <a href="mailto:lakzaei.ali@modares.ac.ir">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#envelope"/></svg>
+          <span class="label">Email</span>
+          <span class="value">lakzaei.ali@modares.ac.ir</span>
+          <svg class="arrow" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-up-right"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/alakzaei" rel="me noopener" target="_blank">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#linkedin"/></svg>
+          <span class="label">LinkedIn</span>
+          <span class="value">in/alakzaei</span>
+          <svg class="arrow" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-up-right"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Sinalkz" rel="me noopener" target="_blank">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#github"/></svg>
+          <span class="label">GitHub</span>
+          <span class="value">Sinalkz</span>
+          <svg class="arrow" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-up-right"/></svg>
+        </a>
+      </li>
+    </ul>
+
+    <a class="cv-button" href="Ali_Lakzaei_CV.pdf" download>
+      <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#download"/></svg>
+      Download CV (PDF)
+    </a>
+  </main>
+
+  <script src="assets/js/theme.js" defer></script>
+</body>
+</html>

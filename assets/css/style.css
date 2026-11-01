@@ -1,0 +1,297 @@
+/* ---------- Fonts (IBM Plex, SIL OFL 1.1, see assets/fonts/OFL.txt) ---------- */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+
+/* ---------- Colours: navy, gold, white (and tints of them) ---------- */
+:root {
+  --navy: #1428A0;
+  --gold: #D4AF37;
+  --white: #FFFFFF;
+
+  /* light mode */
+  --bg: var(--white);
+  --text: #0B1650;          /* deep navy, 16.9:1 on white */
+  --muted: #4F5EB8;         /* navy tint, 5.8:1 on white */
+  --accent: var(--navy);    /* icons */
+  --line: #DEE1F2;          /* navy tint hairline */
+  --hover-bg: #FBF7EB;      /* faint gold tint */
+  --button-bg: var(--navy);
+  --button-text: var(--white);
+  --button-hover-bg: var(--gold);
+  --button-hover-text: #0B1650;
+  --focus: var(--navy);
+
+  --moon: block;
+  --sun: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1340;          /* deep navy */
+    --text: var(--white);
+    --muted: #A2A5B6;       /* white tint on navy, 7.3:1 */
+    --accent: var(--gold);
+    --line: #2C345B;
+    --hover-bg: #141C47;
+    --button-bg: var(--gold);
+    --button-text: #0A1340;
+    --button-hover-bg: var(--white);
+    --button-hover-text: #0A1340;
+    --focus: var(--gold);
+
+    --moon: none;
+    --sun: block;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0A1340;
+  --text: var(--white);
+  --muted: #A2A5B6;
+  --accent: var(--gold);
+  --line: #2C345B;
+  --hover-bg: #141C47;
+  --button-bg: var(--gold);
+  --button-text: #0A1340;
+  --button-hover-bg: var(--white);
+  --button-hover-text: #0A1340;
+  --focus: var(--gold);
+
+  --moon: none;
+  --sun: block;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 4.5rem 1.25rem 3rem;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: #0B1650;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+svg {
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ---------- Layout ---------- */
+.card {
+  width: 100%;
+  max-width: 34rem;
+}
+
+/* ---------- Intro ---------- */
+.intro h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 7vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  margin: 0.9rem 0 0;
+  font-size: 1.125rem;
+}
+
+.affiliation {
+  margin: 0.35rem 0 0;
+  font-family: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.affiliation span {
+  white-space: nowrap;
+}
+
+@media (max-width: 30rem) {
+  .affiliation span { display: block; }
+  .affiliation .sep { display: none; }
+}
+
+/* ---------- Contacts ---------- */
+.contacts {
+  list-style: none;
+  margin: 2.75rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.contacts li {
+  border-bottom: 1px solid var(--line);
+}
+
+.contacts a {
+  display: grid;
+  grid-template-columns: 1.125rem 5.5rem minmax(0, 1fr) 0.875rem;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 0.95rem 0.75rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.contacts a:hover {
+  background: var(--hover-bg);
+}
+
+.contacts .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--accent);
+}
+
+.label {
+  font-family: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.value {
+  overflow-wrap: anywhere;
+}
+
+.arrow {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: var(--muted);
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.contacts a:hover .arrow {
+  color: var(--text);
+  transform: translate(2px, -2px);
+}
+
+/* Narrow screens: label sits above the value */
+@media (max-width: 30rem) {
+  .contacts a {
+    grid-template-columns: 1.125rem minmax(0, 1fr) 0.875rem;
+    grid-template-areas:
+      "icon label arrow"
+      "icon value arrow";
+    row-gap: 0.1rem;
+    padding: 0.85rem 0.5rem;
+  }
+  .contacts .icon { grid-area: icon; }
+  .label { grid-area: label; }
+  .value { grid-area: value; }
+  .arrow { grid-area: arrow; }
+}
+
+/* ---------- CV button ---------- */
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2.25rem;
+  padding: 0.8rem 1.3rem;
+  border-radius: 6px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.cv-button:hover {
+  background: var(--button-hover-bg);
+  color: var(--button-hover-text);
+}
+
+.cv-button .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--gold);
+}
+
+.theme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.theme-toggle .icon-moon { display: var(--moon); }
+.theme-toggle .icon-sun { display: var(--sun); }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
