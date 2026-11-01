@@ -226,9 +226,11 @@ svg {
     grid-template-areas:
       "icon label arrow"
       "icon value arrow";
-    row-gap: 0.1rem;
-    padding: 0.85rem 0.5rem;
+    row-gap: 0;
+    padding: 0.7rem 0.5rem;
   }
+  .contacts { margin-top: 2rem; }
+  .cv-button { margin-top: 1.75rem; }
   .contacts .icon { grid-area: icon; }
   .label { grid-area: label; }
   .value { grid-area: value; }
